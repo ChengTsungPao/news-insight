@@ -1,4 +1,4 @@
-# News Insight
+# News Insight - Frontend
 
 A Flutter application designed to provide a better, more focused news reading experience. Built for both iOS and Android mobile platforms.
 
@@ -21,10 +21,10 @@ Before you begin, ensure you have met the following requirements:
 
 ### Installation & Setup
 
-1. **Clone the repository** (if you haven't already):
+1. **Clone the repository and access the frontend:**
    ```bash
    git clone <repository-url>
-   cd news_insight
+   cd news_insight/frontend
    ```
 
 2. **Install dependencies:**
