@@ -4,8 +4,25 @@ A Flutter application designed to provide a better, more focused news reading ex
 
 ## Features
 
-- Clean and intuitive news reading interface
+- Bottom navigation bar with Home and Account tabs
+- Account page with profile header and settings list
+- Appearance settings with Light / Dark / Follow System options (modal bottom sheet)
 - Cross-platform support (iOS & Android)
+
+## Code Structure
+
+```
+lib/
+  main.dart                  # App entry point, MyApp, theme state
+  pages/
+    home_page.dart           # Home screen
+    account_page.dart        # Account / settings screen
+  widgets/
+    main_shell.dart          # Bottom navigation shell
+    profile_header.dart      # Profile avatar + name/email header
+    settings_tile.dart       # Reusable settings list item
+    appearance_sheet.dart    # Theme picker modal bottom sheet
+```
 
 ## Getting Started
 
