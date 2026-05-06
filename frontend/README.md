@@ -1,46 +1,76 @@
-# News Insight - Frontend
+This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop (JVM).
 
-A Flutter application designed to provide a better, more focused news reading experience. Built for both iOS and Android mobile platforms.
+* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
+  It contains several subfolders:
+  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
+  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
+    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
+    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
+    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
+    folder is the appropriate location.
 
-## Features
+* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
+  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
 
-- Clean and intuitive news reading interface
-- Cross-platform support (iOS & Android)
+### Build and Run Android Application
 
-## Getting Started
+To build and run the development version of the Android app, use the run configuration from the run widget
+in your IDE’s toolbar or build it directly from the terminal:
+- on macOS/Linux
+  ```shell
+  ./gradlew :composeApp:assembleDebug
+  ```
+- on Windows
+  ```shell
+  .\gradlew.bat :composeApp:assembleDebug
+  ```
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+### Build and Run Desktop (JVM) Application
 
-### Prerequisites
+To build and run the development version of the desktop app, use the run configuration from the run widget
+in your IDE’s toolbar or run it directly from the terminal:
+- on macOS/Linux
+  ```shell
+  ./gradlew :composeApp:run
+  ```
+- on Windows
+  ```shell
+  .\gradlew.bat :composeApp:run
+  ```
 
-Before you begin, ensure you have met the following requirements:
+### Build and Run Web Application
 
-- **[Flutter SDK](https://docs.flutter.dev/get-started/install)**: Follow the official instructions to install the Flutter SDK.
-- **[Android Studio](https://developer.android.com/studio)**: Required for Android app development and emulation.
-- **[Xcode](https://developer.apple.com/xcode/)**: Required for iOS app development and emulation (macOS only).
+To build and run the development version of the web app, use the run configuration from the run widget
+in your IDE's toolbar or run it directly from the terminal:
+- for the Wasm target (faster, modern browsers):
+  - on macOS/Linux
+    ```shell
+    ./gradlew :composeApp:wasmJsBrowserDevelopmentRun
+    ```
+  - on Windows
+    ```shell
+    .\gradlew.bat :composeApp:wasmJsBrowserDevelopmentRun
+    ```
+- for the JS target (slower, supports older browsers):
+  - on macOS/Linux
+    ```shell
+    ./gradlew :composeApp:jsBrowserDevelopmentRun
+    ```
+  - on Windows
+    ```shell
+    .\gradlew.bat :composeApp:jsBrowserDevelopmentRun
+    ```
 
-### Installation & Setup
+### Build and Run iOS Application
 
-1. **Clone the repository and access the frontend:**
-   ```bash
-   git clone <repository-url>
-   cd news_insight/frontend
-   ```
+To build and run the development version of the iOS app, use the run configuration from the run widget
+in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
 
-2. **Install dependencies:**
-   ```bash
-   flutter pub get
-   ```
+---
 
-3. **Run the app:**
-   Start your emulator or connect a physical device, then run `flutter run`.
-   
-   > **Note for iOS users:** You need to open the iOS Simulator first before running the app. You can do this quickly from the terminal by running:
-   > ```bash
-   > open -a Simulator
-   > ```
-   > Once the simulator is open, `flutter run` will detect it and deploy the app automatically.
+Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
+[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
+[Kotlin/Wasm](https://kotl.in/wasm/)…
 
-   ```bash
-   flutter run
-   ```
+We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
+If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/newIssue?project=CMP).

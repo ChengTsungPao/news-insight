@@ -1,0 +1,1 @@
+ /Users/rstdfisg/Documents/git_repo/news_insight/frontend/.dart_tool/flutter_build/95029c1c4048e49dc805340c8104bc67/native_assets.json: 
